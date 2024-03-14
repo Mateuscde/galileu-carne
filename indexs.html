@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Formulário de Cadastro</title>
+<style>
+body {
+    background-color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0px;
+	padding:0px;
+}
+
+.container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+
+button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+}
+.cnt1{
+	position:relative;
+	width:100%;
+	height:30px;
+	border:2px solid black;
+	margin-bottom:10px;
+}
+.cnt2{
+	position:relative;
+	width:100%;
+	height:30px;
+	border:2px solid black;
+	margin-bottom:10px;
+}
+.cnt3{
+	position:relative;
+	width:100%;
+	height:30px;
+	border:2px solid black;
+	margin-bottom:10px;
+}
+.cnt4{
+	position:relative;
+	width:100%;
+	height:30px;
+	border:none;
+	margin-bottom:10px;
+}
+.cnt5{
+	position:relative;
+	width:100%;
+	height:30px;
+	border:2px solid black;
+	margin-bottom:10px;
+}
+
+.data{
+	position:relative;
+	height:80%;
+	width:10%;
+	top:0px;
+	border:2px solid black;
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+   
+        <input class="cnt1" type="text" name="nome" placeholder="Nome" required=""></br>
+        <input class="cnt2" type="number" name="cpf" placeholder="CPF">
+        <input class="cnt3" type="number" name="parcelas" placeholder="Parcelas" max="12" min="0" required="">
+        <div class="cnt4">
+			<input class="data" type="number" placeholder="dd">
+			<input class="data" type="number" placeholder="mm">
+			<input class="data" type="number" placeholder="aaaa">
+		</div>
+        <input class="cnt5" type="number" name="valor" placeholder="Valor" required="">
+        <button class="btn" type="submit" onclick="ir()">criar recibos</button>
+   
+</div>
+
+</body>
+<script>
+	var nome=document.getElementsByClassName("cnt1");
+	var parcelas=document.getElementsByClassName("cnt3");
+	var data=document.getElementsByClassName("data");
+	var valor=document.getElementsByClassName("cnt5");
+	var cpf=document.getElementsByClassName("cnt2");
+	var btn=document.getElementsByClassName("btn");
+	
+	function ir(){
+	localStorage.setItem('nomecarne', nome[0].value);
+	localStorage.setItem('parcelascarne', parcelas[0].value);
+	localStorage.setItem('diacarne', data[0].value);
+	localStorage.setItem('mescarne', data[1].value);
+	localStorage.setItem('anocarne', data[2].value);
+	localStorage.setItem('valorcarne', valor[0].value);
+	localStorage.setItem('cpfcarne', cpf[0].value);
+	window.location.replace("carne.html");
+	};
+</script>
+</html>
