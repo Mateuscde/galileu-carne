@@ -1,0 +1,1678 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Título da Página</title>
+	<style>
+		
+		#cont_imprimir{
+		z-index:2;
+			position:relative;
+			width:100%;
+			height:70px;
+			background:#4682B4;
+			border-bottom:5px solid gray;
+			position:sticky;
+			top:0px;
+		}
+		.btn{
+			position:absolute;
+			width:20%;
+			height:7vh;
+			top:50%;
+			left:50%;
+			transform:translate(-50%,-50%);
+			border-radius:5px;
+			border:none;
+			text-transform:uppercase;
+			font-size:130%;
+			font-weight:bold;
+			color:#4682B4;
+		}
+		.btn2{
+			position:relative;
+			width:10%;
+			height:7vh;
+			top:50%;
+			left:5px;
+			transform:translate(0%,-50%);
+			border-radius:5px;
+			border:none;
+			text-transform:uppercase;
+			font-size:130%;
+			font-weight:bold;
+			background:#4682B4;
+			color:white;
+		}
+		button:hover{cursor:pointer;}
+		body{
+			margin:0px;
+			padding:0px;
+			font-family:arial;
+			background-image:url("https://img.freepik.com/vetores-gratis/hexagono-de-fundo-abstrato-com-textura-preta_206725-413.jpg");
+			background-attachment:fixed;
+			background-size:cover;
+			overflow-x:hidden;
+			}
+			body::-webkit-scrollbar {
+				width: 0px;
+			}
+
+			bosy::-webkit-scrollbar-track {
+			background: lightgray;
+			}
+
+::-webkit-scrollbar-thumb {
+    background: darkgray;
+}
+		.cont_carne{
+			display:flex;
+			position:relative;
+			width:98%;
+			/*height:22vh;*/
+			height:55vh;
+			background:white;
+			border:0.2px solid black;
+			left:50%;
+			top:30px;
+			margin-bottom:20px;
+			transform:translate(-50%,0%);
+		}
+		#fundo{
+			background-image:url("https://img.freepik.com/premium-photo/blue-orange-wallpaper-with-blue-background-black-background_889227-20506.jpg");
+			background-attachment:fixed;
+			background-size:cover;
+			background-repeat:no-repeat;
+			background-position:left top;
+			display:flex;
+			position:relative;
+			width:98%;
+			/*height:22vh;*/
+			height:55vh;
+			border:0.2px solid black;
+			left:50%;
+			top:30px;
+			margin-bottom:20px;
+			transform:translate(-50%,0%);
+		}
+		.via_client{
+			position:relative;
+			width:50%;
+			height:100%;
+			border-right:0.2px solid black;
+		}
+		.via_empresa{
+			position:relative;
+			width:50%;
+			height:100%;
+		}
+		.cont_info_empresa{
+			position:relative;
+			display:flex;
+			width:100%;
+			height:15vh;
+			border-bottom:0.2px solid black;
+		}
+		.cont_info_valor{
+			position:relative;
+			display:flex;
+			width:100%;
+			height:10vh;
+			border-bottom:0.2px solid black;
+		}
+		.cont_dados_pessoa{
+			position:relative;
+			width:100%;
+			height:10vh;
+		}
+		.divi1{
+			position:relative;
+			height:100%;
+			width:33%;
+			border-right:0.2px solid black;
+		}
+		.div_info{
+			position:relative;
+			height:100%;
+			width:50%;
+		}
+		.logo{
+			position:relative;
+			height:96%;
+			left:5px;
+			top:50%;
+			transform:translate(0%,-50%);
+		}
+		.txt_info{
+			position:absolute;
+			width:300px;
+			font-family:arial;
+			font-size:7pt;
+			right:-30px;
+			top:50%;
+			transform:translate(0%,-50%);
+		}
+		.parcela{
+			position:relative;
+			width:100%;
+			top:-0%;
+			height:0px;
+			font-size:80%;
+			text-align:center;
+			background:red;
+		}
+		.valor_parcela{
+			position:relative;
+			width:100%;
+			top:-0%;
+			height:0px;
+			text-align:center;
+			background:blue;
+			font-weight:bold;
+		}
+		.vencimento{
+			position:relative;
+			width:100%;
+			top:-0%;
+			height:0px;
+			font-size:80%;
+			text-align:center;
+			background:red;
+		}
+		.valor_vencimento{
+			position:relative;
+			width:100%;
+			top:-0%;
+			height:0px;
+			text-align:center;
+			background:blue;
+			font-weight:bold;
+		}
+		.valor{
+			position:relative;
+			width:100%;
+			top:-0%;
+			height:0px;
+			font-size:80%;
+			text-align:center;
+			background:red;
+		}
+		.valor_carne{
+			position:relative;
+			width:100%;
+			top:-0%;
+			height:0px;
+			text-align:center;
+			background:blue;
+			font-weight:bold;
+		}
+		.nomep{
+			position:relative;
+			width:100%;
+			font-size:130%;
+			top:-11%;
+			text-align:left;
+			padding-left:20px;
+		}
+		.cpfp{
+			position:relative;
+			width:100%;
+			top:-30%;
+			font-size:130%;
+			text-align:left;
+			padding-left:20px;
+		}
+		.assinatura{
+			position:relative;
+			width:70%;
+			top:6%;
+			font-size:80%;
+			text-align:center;
+			padding:6px;
+			border-top: 1px solid black;
+			left:50%;
+			transform:translate(-50%,0%);
+		}
+		
+		@media print {
+			#cont_imprimir{display:none;}
+			body{background:none;}
+			.cont_carne{
+			display:flex;
+			position:relative;
+			width:98%;
+			height:22vh;
+			background:white;
+			border:0.2px solid black;
+			left:50%;
+			top:30px;
+			transform:translate(-50%,0%);
+		}
+		#fundo{
+			display:flex;
+			position:relative;
+			height:22vh;
+			background-position:left top;
+			background-position:left top;
+			background-color:black;
+			border:0.2px solid black;
+			left:50%;
+			top:30px;
+			margin-bottom:20px;
+			transform:translate(-50%,0%);
+		}
+		.via_client{
+			position:relative;
+			width:50%;
+			height:100%;
+			border-right:0.2px solid black;
+		}
+		.via_empresa{
+			position:relative;
+			width:50%;
+			height:100%;
+		}
+		.cont_info_empresa{
+			position:relative;
+			display:flex;
+			width:100%;
+			height:7vh;
+			border-bottom:0.2px solid black;
+		}
+		.cont_info_valor{
+			position:relative;
+			display:flex;
+			width:100%;
+			height:4vh;
+			border-bottom:0.2px solid black;
+		}
+		.cont_dados_pessoa{
+			position:relative;
+			width:100%;
+			height:4vh;
+		}
+		.divi1{
+			position:relative;
+			height:100%;
+			width:33%;
+			border-right:0.2px solid black;
+		}
+		.div_info{
+			position:relative;
+			height:100%;
+			width:50%;
+		}
+		.logo{
+			position:relative;
+			height:96%;
+			left:5px;
+			top:50%;
+			transform:translate(0%,-50%);
+		}
+		.txt_info{
+			position:absolute;
+			width:300px;
+			font-family:arial;
+			font-size:7pt;
+			left:-15px;
+			top:50%;
+			transform:translate(0%,-50%);
+		}
+		.parcela{
+			position:relative;
+			width:100%;
+			top:-0%;
+			height:0px;
+			font-size:80%;
+			text-align:center;
+			background:red;
+		}
+		.valor_parcela{
+			position:relative;
+			width:100%;
+			top:-0%;
+			height:0px;
+			text-align:center;
+			background:blue;
+			font-weight:bold;
+		}
+		.vencimento{
+			position:relative;
+			width:100%;
+			top:-0%;
+			height:0px;
+			font-size:80%;
+			text-align:center;
+			background:red;
+		}
+		.valor_vencimento{
+			position:relative;
+			width:100%;
+			top:-0%;
+			height:0px;
+			text-align:center;
+			background:blue;
+			font-weight:bold;
+		}
+		.valor{
+			position:relative;
+			width:100%;
+			top:-0%;
+			height:0px;
+			font-size:80%;
+			text-align:center;
+			background:red;
+		}
+		.valor_carne{
+			position:relative;
+			width:100%;
+			top:-0%;
+			height:0px;
+			text-align:center;
+			background:blue;
+			font-weight:bold;
+		}
+		.nomep{
+			position:relative;
+			width:100%;
+			font-size:130%;
+			top:-11%;
+			text-align:left;
+			padding-left:20px;
+		}
+		.cpfp{
+			position:relative;
+			width:100%;
+			top:-28%;
+			font-size:130%;
+			text-align:left;
+			padding-left:20px;
+		}
+		.assinatura{
+			position:relative;
+			width:70%;
+			top:6%;
+			font-size:80%;
+			text-align:center;
+			padding:6px;
+			border-top: 1px solid black;
+			left:50%;
+			transform:translate(-50%,0%);
+		}
+		}
+		#textname{
+			position:absolute;
+			width:auto;
+			height:auto;
+			text-align:center;
+			background:black;
+			color:white;
+			font-size:370%;
+			text-transform:uppercase;
+			font-weight:bold;
+			margin:0px;
+			padding-left:50px;
+			padding-right:50px;
+			border-radius:50px;
+			top:50%;
+			left:50%;
+			transform:translate(-50%,-50%);
+		}
+		#textnamep{
+			position:absolute;
+			width:98%;
+			color:white;
+			font-size:200%;
+			text-align:center;
+			text-transform:uppercase;
+			font-weight:bold;
+			margin:0px;
+			padding-left:20px;
+			bottom:0px;
+			background:black;
+		}
+		.barra{
+			position:relative;
+			width:3%;
+			height:100%;
+			border-right:2px solid black;
+		}
+	</style>
+</head>
+<body>
+	<div id="cont_imprimir">
+		<button class="btn2" onclick="voltar()">voltar</button>
+		<button class="btn" onclick="imprimirPagina()">imprimir</button>
+	</div>
+    <!--Conteúdo da página vai aqui -->
+	<div id="fundo">
+		<p id="textname">galileu cursos</p>
+		<p id="textnamep">vthrthrthrhtrhtrh</p>
+	</div>
+	<div class="cont_carne">
+		<div class="barra"></div>
+		<div class="via_client">
+			<div class="cont_info_empresa">
+				<div class="div_info">
+					<img src="logo.jpeg" class="logo">
+				</div>
+				<!--<divisao-->
+				<div class="div_info"  style="border:none;">
+					<span class="txt_info">
+						<span style="font-size:155%;"><b>COLÉGIO GALILEU LTDA-ME</b></span></br>
+						<b>AV:</b>Marechal Castelo Branco, 1332-b, São Pedro</br>
+						<b>CEP:</b>65400-000, Codó-MA</br>
+						<b>CJPJ:</b>14.072.060/0001-47</br>
+						<b>FONE:</b>(99)98104-1696 ou (99)99903-5262
+					</span>
+				</div>
+			</div>
+			<!--<divisao-->
+			<div class="cont_info_valor">
+				<div class="divi1">
+					<p class="parcela">parcelas</p>
+					<p class="valor_parcela"><b>0/0</b></p>
+				</div>
+				<div class="divi1">
+					<p class="vencimento">data de vencimento</p>
+					<p class="valor_vencimento"><b>00/00/0000</b></p>
+				</div>
+				<div class="divi1" style="border:none;">
+					<p class="valor">valor</p>
+					<p class="valor_carne"><b>R$ 0,00</b></p>
+				</div>
+			</div>
+			<div class="cont_dados_pessoa">
+				<p class="nomep">Nome:</p>
+				<p class="cpfp">CPF:</p>
+			</div>
+			<p class="assinatura">assinatura</p>
+		</div>
+		<!--<divisao-->
+		<div class="via_empresa">
+			<div class="cont_info_empresa">
+				<div class="div_info">
+					<img src="logo.jpeg" class="logo">
+				</div>
+				<!--<divisao-->
+				<div class="div_info"  style="border:none;">
+					<span class="txt_info">
+						<span style="font-size:155%;"><b>COLÉGIO GALILEU LTDA-ME</b></span></br>
+						<b>AV:</b>Marechal Castelo Branco, 1332-b, São Pedro</br>
+						<b>CEP:</b>65400-000, Codó-MA</br>
+						<b>CJPJ:</b>14.072.060/0001-47</br>
+						<b>FONE:</b>(99)98104-1696 ou (99)99903-5262
+					</span>
+				</div>
+			</div>
+			<!--<divisao-->
+			<div class="cont_info_valor">
+				<div class="divi1">
+					<p class="parcela">parcelas</p>
+					<p class="valor_parcela"><strong>0/0</strong></p>
+				</div>
+				<div class="divi1">
+					<p class="vencimento">data de vencimento</p>
+					<p class="valor_vencimento"><b>00/00/0000</b></p>
+				</div>
+				<div class="divi1" style="border:none;">
+					<p class="valor">valor</p>
+					<p class="valor_carne"><b>R$ 0,00</b></p>
+				</div>
+			</div>
+			<div class="cont_dados_pessoa">
+				<p class="nomep">Nome:</p>
+				<p class="cpfp">CPF:</p>
+			</div>
+			<p class="assinatura" style="text-transform:uppercase;border:none;"><strong>data de pagamento: ________/__________/________</strong></p>
+		</div>
+	</div>
+	
+	<div class="cont_carne">
+		<div class="barra"></div>
+		<div class="via_client">
+			<div class="cont_info_empresa">
+				<div class="div_info">
+					<img src="logo.jpeg" class="logo">
+				</div>
+				<!--<divisao-->
+				<div class="div_info"  style="border:none;">
+					<span class="txt_info">
+						<span style="font-size:155%;"><b>COLÉGIO GALILEU LTDA-ME</b></span></br>
+						<b>AV:</b>Marechal Castelo Branco, 1332-b, São Pedro</br>
+						<b>CEP:</b>65400-000, Codó-MA</br>
+						<b>CJPJ:</b>14.072.060/0001-47</br>
+						<b>FONE:</b>(99)98104-1696 ou (99)99903-5262
+					</span>
+				</div>
+			</div>
+			<!--<divisao-->
+			<div class="cont_info_valor">
+				<div class="divi1">
+					<p class="parcela">parcelas</p>
+					<p class="valor_parcela"><b>0/0</b></p>
+				</div>
+				<div class="divi1">
+					<p class="vencimento">data de vencimento</p>
+					<p class="valor_vencimento"><b>00/00/0000</b></p>
+				</div>
+				<div class="divi1" style="border:none;">
+					<p class="valor">valor</p>
+					<p class="valor_carne"><b>R$ 0,00</b></p>
+				</div>
+			</div>
+			<div class="cont_dados_pessoa">
+				<p class="nomep">Nome:</p>
+				<p class="cpfp">CPF:</p>
+			</div>
+			<p class="assinatura">assinatura</p>
+		</div>
+		<!--<divisao-->
+		<div class="via_empresa">
+			<div class="cont_info_empresa">
+				<div class="div_info">
+					<img src="logo.jpeg" class="logo">
+				</div>
+				<!--<divisao-->
+				<div class="div_info"  style="border:none;">
+					<span class="txt_info">
+						<span style="font-size:155%;"><b>COLÉGIO GALILEU LTDA-ME</b></span></br>
+						<b>AV:</b>Marechal Castelo Branco, 1332-b, São Pedro</br>
+						<b>CEP:</b>65400-000, Codó-MA</br>
+						<b>CJPJ:</b>14.072.060/0001-47</br>
+						<b>FONE:</b>(99)98104-1696 ou (99)99903-5262
+					</span>
+				</div>
+			</div>
+			<!--<divisao-->
+			<div class="cont_info_valor">
+				<div class="divi1">
+					<p class="parcela">parcelas</p>
+					<p class="valor_parcela"><strong>0/0</strong></p>
+				</div>
+				<div class="divi1">
+					<p class="vencimento">data de vencimento</p>
+					<p class="valor_vencimento"><b>00/00/0000</b></p>
+				</div>
+				<div class="divi1" style="border:none;">
+					<p class="valor">valor</p>
+					<p class="valor_carne"><b>R$ 0,00</b></p>
+				</div>
+			</div>
+			<div class="cont_dados_pessoa">
+				<p class="nomep">Nome:</p>
+				<p class="cpfp">CPF:</p>
+			</div>
+			<p class="assinatura" style="text-transform:uppercase;border:none;"><strong>data de pagamento: ________/__________/________</strong></p>
+		</div>
+	</div>
+	<div class="cont_carne">
+		<div class="barra"></div>
+		<div class="via_client">
+			<div class="cont_info_empresa">
+				<div class="div_info">
+					<img src="logo.jpeg" class="logo">
+				</div>
+				<!--<divisao-->
+				<div class="div_info"  style="border:none;">
+					<span class="txt_info">
+						<span style="font-size:155%;"><b>COLÉGIO GALILEU LTDA-ME</b></span></br>
+						<b>AV:</b>Marechal Castelo Branco, 1332-b, São Pedro</br>
+						<b>CEP:</b>65400-000, Codó-MA</br>
+						<b>CJPJ:</b>14.072.060/0001-47</br>
+						<b>FONE:</b>(99)98104-1696 ou (99)99903-5262
+					</span>
+				</div>
+			</div>
+			<!--<divisao-->
+			<div class="cont_info_valor">
+				<div class="divi1">
+					<p class="parcela">parcelas</p>
+					<p class="valor_parcela"><b>0/0</b></p>
+				</div>
+				<div class="divi1">
+					<p class="vencimento">data de vencimento</p>
+					<p class="valor_vencimento"><b>00/00/0000</b></p>
+				</div>
+				<div class="divi1" style="border:none;">
+					<p class="valor">valor</p>
+					<p class="valor_carne"><b>R$ 0,00</b></p>
+				</div>
+			</div>
+			<div class="cont_dados_pessoa">
+				<p class="nomep">Nome:</p>
+				<p class="cpfp">CPF:</p>
+			</div>
+			<p class="assinatura">assinatura</p>
+		</div>
+		<!--<divisao-->
+		<div class="via_empresa">
+			<div class="cont_info_empresa">
+				<div class="div_info">
+					<img src="logo.jpeg" class="logo">
+				</div>
+				<!--<divisao-->
+				<div class="div_info"  style="border:none;">
+					<span class="txt_info">
+						<span style="font-size:155%;"><b>COLÉGIO GALILEU LTDA-ME</b></span></br>
+						<b>AV:</b>Marechal Castelo Branco, 1332-b, São Pedro</br>
+						<b>CEP:</b>65400-000, Codó-MA</br>
+						<b>CJPJ:</b>14.072.060/0001-47</br>
+						<b>FONE:</b>(99)98104-1696 ou (99)99903-5262
+					</span>
+				</div>
+			</div>
+			<!--<divisao-->
+			<div class="cont_info_valor">
+				<div class="divi1">
+					<p class="parcela">parcelas</p>
+					<p class="valor_parcela"><strong>0/0</strong></p>
+				</div>
+				<div class="divi1">
+					<p class="vencimento">data de vencimento</p>
+					<p class="valor_vencimento"><b>00/00/0000</b></p>
+				</div>
+				<div class="divi1" style="border:none;">
+					<p class="valor">valor</p>
+					<p class="valor_carne"><b>R$ 0,00</b></p>
+				</div>
+			</div>
+			<div class="cont_dados_pessoa">
+				<p class="nomep">Nome:</p>
+				<p class="cpfp">CPF:</p>
+			</div>
+			<p class="assinatura" style="text-transform:uppercase;border:none;"><strong>data de pagamento: ________/__________/________</strong></p>
+		</div>
+	</div>
+	<div class="cont_carne">
+		<div class="barra"></div>
+		<div class="via_client">
+			<div class="cont_info_empresa">
+				<div class="div_info">
+					<img src="logo.jpeg" class="logo">
+				</div>
+				<!--<divisao-->
+				<div class="div_info"  style="border:none;">
+					<span class="txt_info">
+						<span style="font-size:155%;"><b>COLÉGIO GALILEU LTDA-ME</b></span></br>
+						<b>AV:</b>Marechal Castelo Branco, 1332-b, São Pedro</br>
+						<b>CEP:</b>65400-000, Codó-MA</br>
+						<b>CJPJ:</b>14.072.060/0001-47</br>
+						<b>FONE:</b>(99)98104-1696 ou (99)99903-5262
+					</span>
+				</div>
+			</div>
+			<!--<divisao-->
+			<div class="cont_info_valor">
+				<div class="divi1">
+					<p class="parcela">parcelas</p>
+					<p class="valor_parcela"><b>0/0</b></p>
+				</div>
+				<div class="divi1">
+					<p class="vencimento">data de vencimento</p>
+					<p class="valor_vencimento"><b>00/00/0000</b></p>
+				</div>
+				<div class="divi1" style="border:none;">
+					<p class="valor">valor</p>
+					<p class="valor_carne"><b>R$ 0,00</b></p>
+				</div>
+			</div>
+			<div class="cont_dados_pessoa">
+				<p class="nomep">Nome:</p>
+				<p class="cpfp">CPF:</p>
+			</div>
+			<p class="assinatura">assinatura</p>
+		</div>
+		<!--<divisao-->
+		<div class="via_empresa">
+			<div class="cont_info_empresa">
+				<div class="div_info">
+					<img src="logo.jpeg" class="logo">
+				</div>
+				<!--<divisao-->
+				<div class="div_info"  style="border:none;">
+					<span class="txt_info">
+						<span style="font-size:155%;"><b>COLÉGIO GALILEU LTDA-ME</b></span></br>
+						<b>AV:</b>Marechal Castelo Branco, 1332-b, São Pedro</br>
+						<b>CEP:</b>65400-000, Codó-MA</br>
+						<b>CJPJ:</b>14.072.060/0001-47</br>
+						<b>FONE:</b>(99)98104-1696 ou (99)99903-5262
+					</span>
+				</div>
+			</div>
+			<!--<divisao-->
+			<div class="cont_info_valor">
+				<div class="divi1">
+					<p class="parcela">parcelas</p>
+					<p class="valor_parcela"><strong>0/0</strong></p>
+				</div>
+				<div class="divi1">
+					<p class="vencimento">data de vencimento</p>
+					<p class="valor_vencimento"><b>00/00/0000</b></p>
+				</div>
+				<div class="divi1" style="border:none;">
+					<p class="valor">valor</p>
+					<p class="valor_carne"><b>R$ 0,00</b></p>
+				</div>
+			</div>
+			<div class="cont_dados_pessoa">
+				<p class="nomep">Nome:</p>
+				<p class="cpfp">CPF:</p>
+			</div>
+			<p class="assinatura" style="text-transform:uppercase;border:none;"><strong>data de pagamento: ________/__________/________</strong></p>
+		</div>
+	</div>
+	<div class="cont_carne">
+		<div class="barra"></div>
+		<div class="via_client">
+			<div class="cont_info_empresa">
+				<div class="div_info">
+					<img src="logo.jpeg" class="logo">
+				</div>
+				<!--<divisao-->
+				<div class="div_info"  style="border:none;">
+					<span class="txt_info">
+						<span style="font-size:155%;"><b>COLÉGIO GALILEU LTDA-ME</b></span></br>
+						<b>AV:</b>Marechal Castelo Branco, 1332-b, São Pedro</br>
+						<b>CEP:</b>65400-000, Codó-MA</br>
+						<b>CJPJ:</b>14.072.060/0001-47</br>
+						<b>FONE:</b>(99)98104-1696 ou (99)99903-5262
+					</span>
+				</div>
+			</div>
+			<!--<divisao-->
+			<div class="cont_info_valor">
+				<div class="divi1">
+					<p class="parcela">parcelas</p>
+					<p class="valor_parcela"><b>0/0</b></p>
+				</div>
+				<div class="divi1">
+					<p class="vencimento">data de vencimento</p>
+					<p class="valor_vencimento"><b>00/00/0000</b></p>
+				</div>
+				<div class="divi1" style="border:none;">
+					<p class="valor">valor</p>
+					<p class="valor_carne"><b>R$ 0,00</b></p>
+				</div>
+			</div>
+			<div class="cont_dados_pessoa">
+				<p class="nomep">Nome:</p>
+				<p class="cpfp">CPF:</p>
+			</div>
+			<p class="assinatura">assinatura</p>
+		</div>
+		<!--<divisao-->
+		<div class="via_empresa">
+			<div class="cont_info_empresa">
+				<div class="div_info">
+					<img src="logo.jpeg" class="logo">
+				</div>
+				<!--<divisao-->
+				<div class="div_info"  style="border:none;">
+					<span class="txt_info">
+						<span style="font-size:155%;"><b>COLÉGIO GALILEU LTDA-ME</b></span></br>
+						<b>AV:</b>Marechal Castelo Branco, 1332-b, São Pedro</br>
+						<b>CEP:</b>65400-000, Codó-MA</br>
+						<b>CJPJ:</b>14.072.060/0001-47</br>
+						<b>FONE:</b>(99)98104-1696 ou (99)99903-5262
+					</span>
+				</div>
+			</div>
+			<!--<divisao-->
+			<div class="cont_info_valor">
+				<div class="divi1">
+					<p class="parcela">parcelas</p>
+					<p class="valor_parcela"><strong>0/0</strong></p>
+				</div>
+				<div class="divi1">
+					<p class="vencimento">data de vencimento</p>
+					<p class="valor_vencimento"><b>00/00/0000</b></p>
+				</div>
+				<div class="divi1" style="border:none;">
+					<p class="valor">valor</p>
+					<p class="valor_carne"><b>R$ 0,00</b></p>
+				</div>
+			</div>
+			<div class="cont_dados_pessoa">
+				<p class="nomep">Nome:</p>
+				<p class="cpfp">CPF:</p>
+			</div>
+			<p class="assinatura" style="text-transform:uppercase;border:none;"><strong>data de pagamento: ________/__________/________</strong></p>
+		</div>
+	</div>
+	<div class="cont_carne">
+		<div class="barra"></div>
+		<div class="via_client">
+			<div class="cont_info_empresa">
+				<div class="div_info">
+					<img src="logo.jpeg" class="logo">
+				</div>
+				<!--<divisao-->
+				<div class="div_info"  style="border:none;">
+					<span class="txt_info">
+						<span style="font-size:155%;"><b>COLÉGIO GALILEU LTDA-ME</b></span></br>
+						<b>AV:</b>Marechal Castelo Branco, 1332-b, São Pedro</br>
+						<b>CEP:</b>65400-000, Codó-MA</br>
+						<b>CJPJ:</b>14.072.060/0001-47</br>
+						<b>FONE:</b>(99)98104-1696 ou (99)99903-5262
+					</span>
+				</div>
+			</div>
+			<!--<divisao-->
+			<div class="cont_info_valor">
+				<div class="divi1">
+					<p class="parcela">parcelas</p>
+					<p class="valor_parcela"><b>0/0</b></p>
+				</div>
+				<div class="divi1">
+					<p class="vencimento">data de vencimento</p>
+					<p class="valor_vencimento"><b>00/00/0000</b></p>
+				</div>
+				<div class="divi1" style="border:none;">
+					<p class="valor">valor</p>
+					<p class="valor_carne"><b>R$ 0,00</b></p>
+				</div>
+			</div>
+			<div class="cont_dados_pessoa">
+				<p class="nomep">Nome:</p>
+				<p class="cpfp">CPF:</p>
+			</div>
+			<p class="assinatura">assinatura</p>
+		</div>
+		<!--<divisao-->
+		<div class="via_empresa">
+			<div class="cont_info_empresa">
+				<div class="div_info">
+					<img src="logo.jpeg" class="logo">
+				</div>
+				<!--<divisao-->
+				<div class="div_info"  style="border:none;">
+					<span class="txt_info">
+						<span style="font-size:155%;"><b>COLÉGIO GALILEU LTDA-ME</b></span></br>
+						<b>AV:</b>Marechal Castelo Branco, 1332-b, São Pedro</br>
+						<b>CEP:</b>65400-000, Codó-MA</br>
+						<b>CJPJ:</b>14.072.060/0001-47</br>
+						<b>FONE:</b>(99)98104-1696 ou (99)99903-5262
+					</span>
+				</div>
+			</div>
+			<!--<divisao-->
+			<div class="cont_info_valor">
+				<div class="divi1">
+					<p class="parcela">parcelas</p>
+					<p class="valor_parcela"><strong>0/0</strong></p>
+				</div>
+				<div class="divi1">
+					<p class="vencimento">data de vencimento</p>
+					<p class="valor_vencimento"><b>00/00/0000</b></p>
+				</div>
+				<div class="divi1" style="border:none;">
+					<p class="valor">valor</p>
+					<p class="valor_carne"><b>R$ 0,00</b></p>
+				</div>
+			</div>
+			<div class="cont_dados_pessoa">
+				<p class="nomep">Nome:</p>
+				<p class="cpfp">CPF:</p>
+			</div>
+			<p class="assinatura" style="text-transform:uppercase;border:none;"><strong>data de pagamento: ________/__________/________</strong></p>
+		</div>
+	</div>
+	<div class="cont_carne">
+		<div class="barra"></div>
+		<div class="via_client">
+			<div class="cont_info_empresa">
+				<div class="div_info">
+					<img src="logo.jpeg" class="logo">
+				</div>
+				<!--<divisao-->
+				<div class="div_info"  style="border:none;">
+					<span class="txt_info">
+						<span style="font-size:155%;"><b>COLÉGIO GALILEU LTDA-ME</b></span></br>
+						<b>AV:</b>Marechal Castelo Branco, 1332-b, São Pedro</br>
+						<b>CEP:</b>65400-000, Codó-MA</br>
+						<b>CJPJ:</b>14.072.060/0001-47</br>
+						<b>FONE:</b>(99)98104-1696 ou (99)99903-5262
+					</span>
+				</div>
+			</div>
+			<!--<divisao-->
+			<div class="cont_info_valor">
+				<div class="divi1">
+					<p class="parcela">parcelas</p>
+					<p class="valor_parcela"><b>0/0</b></p>
+				</div>
+				<div class="divi1">
+					<p class="vencimento">data de vencimento</p>
+					<p class="valor_vencimento"><b>00/00/0000</b></p>
+				</div>
+				<div class="divi1" style="border:none;">
+					<p class="valor">valor</p>
+					<p class="valor_carne"><b>R$ 0,00</b></p>
+				</div>
+			</div>
+			<div class="cont_dados_pessoa">
+				<p class="nomep">Nome:</p>
+				<p class="cpfp">CPF:</p>
+			</div>
+			<p class="assinatura">assinatura</p>
+		</div>
+		<!--<divisao-->
+		<div class="via_empresa">
+			<div class="cont_info_empresa">
+				<div class="div_info">
+					<img src="logo.jpeg" class="logo">
+				</div>
+				<!--<divisao-->
+				<div class="div_info"  style="border:none;">
+					<span class="txt_info">
+						<span style="font-size:155%;"><b>COLÉGIO GALILEU LTDA-ME</b></span></br>
+						<b>AV:</b>Marechal Castelo Branco, 1332-b, São Pedro</br>
+						<b>CEP:</b>65400-000, Codó-MA</br>
+						<b>CJPJ:</b>14.072.060/0001-47</br>
+						<b>FONE:</b>(99)98104-1696 ou (99)99903-5262
+					</span>
+				</div>
+			</div>
+			<!--<divisao-->
+			<div class="cont_info_valor">
+				<div class="divi1">
+					<p class="parcela">parcelas</p>
+					<p class="valor_parcela"><strong>0/0</strong></p>
+				</div>
+				<div class="divi1">
+					<p class="vencimento">data de vencimento</p>
+					<p class="valor_vencimento"><b>00/00/0000</b></p>
+				</div>
+				<div class="divi1" style="border:none;">
+					<p class="valor">valor</p>
+					<p class="valor_carne"><b>R$ 0,00</b></p>
+				</div>
+			</div>
+			<div class="cont_dados_pessoa">
+				<p class="nomep">Nome:</p>
+				<p class="cpfp">CPF:</p>
+			</div>
+			<p class="assinatura" style="text-transform:uppercase;border:none;"><strong>data de pagamento: ________/__________/________</strong></p>
+		</div>
+	</div>
+	<div class="cont_carne">
+		<div class="barra"></div>
+		<div class="via_client">
+			<div class="cont_info_empresa">
+				<div class="div_info">
+					<img src="logo.jpeg" class="logo">
+				</div>
+				<!--<divisao-->
+				<div class="div_info"  style="border:none;">
+					<span class="txt_info">
+						<span style="font-size:155%;"><b>COLÉGIO GALILEU LTDA-ME</b></span></br>
+						<b>AV:</b>Marechal Castelo Branco, 1332-b, São Pedro</br>
+						<b>CEP:</b>65400-000, Codó-MA</br>
+						<b>CJPJ:</b>14.072.060/0001-47</br>
+						<b>FONE:</b>(99)98104-1696 ou (99)99903-5262
+					</span>
+				</div>
+			</div>
+			<!--<divisao-->
+			<div class="cont_info_valor">
+				<div class="divi1">
+					<p class="parcela">parcelas</p>
+					<p class="valor_parcela"><b>0/0</b></p>
+				</div>
+				<div class="divi1">
+					<p class="vencimento">data de vencimento</p>
+					<p class="valor_vencimento"><b>00/00/0000</b></p>
+				</div>
+				<div class="divi1" style="border:none;">
+					<p class="valor">valor</p>
+					<p class="valor_carne"><b>R$ 0,00</b></p>
+				</div>
+			</div>
+			<div class="cont_dados_pessoa">
+				<p class="nomep">Nome:</p>
+				<p class="cpfp">CPF:</p>
+			</div>
+			<p class="assinatura">assinatura</p>
+		</div>
+		<!--<divisao-->
+		<div class="via_empresa">
+			<div class="cont_info_empresa">
+				<div class="div_info">
+					<img src="logo.jpeg" class="logo">
+				</div>
+				<!--<divisao-->
+				<div class="div_info"  style="border:none;">
+					<span class="txt_info">
+						<span style="font-size:155%;"><b>COLÉGIO GALILEU LTDA-ME</b></span></br>
+						<b>AV:</b>Marechal Castelo Branco, 1332-b, São Pedro</br>
+						<b>CEP:</b>65400-000, Codó-MA</br>
+						<b>CJPJ:</b>14.072.060/0001-47</br>
+						<b>FONE:</b>(99)98104-1696 ou (99)99903-5262
+					</span>
+				</div>
+			</div>
+			<!--<divisao-->
+			<div class="cont_info_valor">
+				<div class="divi1">
+					<p class="parcela">parcelas</p>
+					<p class="valor_parcela"><strong>0/0</strong></p>
+				</div>
+				<div class="divi1">
+					<p class="vencimento">data de vencimento</p>
+					<p class="valor_vencimento"><b>00/00/0000</b></p>
+				</div>
+				<div class="divi1" style="border:none;">
+					<p class="valor">valor</p>
+					<p class="valor_carne"><b>R$ 0,00</b></p>
+				</div>
+			</div>
+			<div class="cont_dados_pessoa">
+				<p class="nomep">Nome:</p>
+				<p class="cpfp">CPF:</p>
+			</div>
+			<p class="assinatura" style="text-transform:uppercase;border:none;"><strong>data de pagamento: ________/__________/________</strong></p>
+		</div>
+	</div>
+	<div class="cont_carne">
+		<div class="barra"></div>
+		<div class="via_client">
+			<div class="cont_info_empresa">
+				<div class="div_info">
+					<img src="logo.jpeg" class="logo">
+				</div>
+				<!--<divisao-->
+				<div class="div_info"  style="border:none;">
+					<span class="txt_info">
+						<span style="font-size:155%;"><b>COLÉGIO GALILEU LTDA-ME</b></span></br>
+						<b>AV:</b>Marechal Castelo Branco, 1332-b, São Pedro</br>
+						<b>CEP:</b>65400-000, Codó-MA</br>
+						<b>CJPJ:</b>14.072.060/0001-47</br>
+						<b>FONE:</b>(99)98104-1696 ou (99)99903-5262
+					</span>
+				</div>
+			</div>
+			<!--<divisao-->
+			<div class="cont_info_valor">
+				<div class="divi1">
+					<p class="parcela">parcelas</p>
+					<p class="valor_parcela"><b>0/0</b></p>
+				</div>
+				<div class="divi1">
+					<p class="vencimento">data de vencimento</p>
+					<p class="valor_vencimento"><b>00/00/0000</b></p>
+				</div>
+				<div class="divi1" style="border:none;">
+					<p class="valor">valor</p>
+					<p class="valor_carne"><b>R$ 0,00</b></p>
+				</div>
+			</div>
+			<div class="cont_dados_pessoa">
+				<p class="nomep">Nome:</p>
+				<p class="cpfp">CPF:</p>
+			</div>
+			<p class="assinatura">assinatura</p>
+		</div>
+		<!--<divisao-->
+		<div class="via_empresa">
+			<div class="cont_info_empresa">
+				<div class="div_info">
+					<img src="logo.jpeg" class="logo">
+				</div>
+				<!--<divisao-->
+				<div class="div_info"  style="border:none;">
+					<span class="txt_info">
+						<span style="font-size:155%;"><b>COLÉGIO GALILEU LTDA-ME</b></span></br>
+						<b>AV:</b>Marechal Castelo Branco, 1332-b, São Pedro</br>
+						<b>CEP:</b>65400-000, Codó-MA</br>
+						<b>CJPJ:</b>14.072.060/0001-47</br>
+						<b>FONE:</b>(99)98104-1696 ou (99)99903-5262
+					</span>
+				</div>
+			</div>
+			<!--<divisao-->
+			<div class="cont_info_valor">
+				<div class="divi1">
+					<p class="parcela">parcelas</p>
+					<p class="valor_parcela"><strong>0/0</strong></p>
+				</div>
+				<div class="divi1">
+					<p class="vencimento">data de vencimento</p>
+					<p class="valor_vencimento"><b>00/00/0000</b></p>
+				</div>
+				<div class="divi1" style="border:none;">
+					<p class="valor">valor</p>
+					<p class="valor_carne"><b>R$ 0,00</b></p>
+				</div>
+			</div>
+			<div class="cont_dados_pessoa">
+				<p class="nomep">Nome:</p>
+				<p class="cpfp">CPF:</p>
+			</div>
+			<p class="assinatura" style="text-transform:uppercase;border:none;"><strong>data de pagamento: ________/__________/________</strong></p>
+		</div>
+	</div>
+	<div class="cont_carne">
+		<div class="barra"></div>
+		<div class="via_client">
+			<div class="cont_info_empresa">
+				<div class="div_info">
+					<img src="logo.jpeg" class="logo">
+				</div>
+				<!--<divisao-->
+				<div class="div_info"  style="border:none;">
+					<span class="txt_info">
+						<span style="font-size:155%;"><b>COLÉGIO GALILEU LTDA-ME</b></span></br>
+						<b>AV:</b>Marechal Castelo Branco, 1332-b, São Pedro</br>
+						<b>CEP:</b>65400-000, Codó-MA</br>
+						<b>CJPJ:</b>14.072.060/0001-47</br>
+						<b>FONE:</b>(99)98104-1696 ou (99)99903-5262
+					</span>
+				</div>
+			</div>
+			<!--<divisao-->
+			<div class="cont_info_valor">
+				<div class="divi1">
+					<p class="parcela">parcelas</p>
+					<p class="valor_parcela"><b>0/0</b></p>
+				</div>
+				<div class="divi1">
+					<p class="vencimento">data de vencimento</p>
+					<p class="valor_vencimento"><b>00/00/0000</b></p>
+				</div>
+				<div class="divi1" style="border:none;">
+					<p class="valor">valor</p>
+					<p class="valor_carne"><b>R$ 0,00</b></p>
+				</div>
+			</div>
+			<div class="cont_dados_pessoa">
+				<p class="nomep">Nome:</p>
+				<p class="cpfp">CPF:</p>
+			</div>
+			<p class="assinatura">assinatura</p>
+		</div>
+		<!--<divisao-->
+		<div class="via_empresa">
+			<div class="cont_info_empresa">
+				<div class="div_info">
+					<img src="logo.jpeg" class="logo">
+				</div>
+				<!--<divisao-->
+				<div class="div_info"  style="border:none;">
+					<span class="txt_info">
+						<span style="font-size:155%;"><b>COLÉGIO GALILEU LTDA-ME</b></span></br>
+						<b>AV:</b>Marechal Castelo Branco, 1332-b, São Pedro</br>
+						<b>CEP:</b>65400-000, Codó-MA</br>
+						<b>CJPJ:</b>14.072.060/0001-47</br>
+						<b>FONE:</b>(99)98104-1696 ou (99)99903-5262
+					</span>
+				</div>
+			</div>
+			<!--<divisao-->
+			<div class="cont_info_valor">
+				<div class="divi1">
+					<p class="parcela">parcelas</p>
+					<p class="valor_parcela"><strong>0/0</strong></p>
+				</div>
+				<div class="divi1">
+					<p class="vencimento">data de vencimento</p>
+					<p class="valor_vencimento"><b>00/00/0000</b></p>
+				</div>
+				<div class="divi1" style="border:none;">
+					<p class="valor">valor</p>
+					<p class="valor_carne"><b>R$ 0,00</b></p>
+				</div>
+			</div>
+			<div class="cont_dados_pessoa">
+				<p class="nomep">Nome:</p>
+				<p class="cpfp">CPF:</p>
+			</div>
+			<p class="assinatura" style="text-transform:uppercase;border:none;"><strong>data de pagamento: ________/__________/________</strong></p>
+		</div>
+	</div>
+	
+	<div class="cont_carne">
+		<div class="barra"></div>
+		<div class="via_client">
+			<div class="cont_info_empresa">
+				<div class="div_info">
+					<img src="logo.jpeg" class="logo">
+				</div>
+				<!--<divisao-->
+				<div class="div_info"  style="border:none;">
+					<span class="txt_info">
+						<span style="font-size:155%;"><b>COLÉGIO GALILEU LTDA-ME</b></span></br>
+						<b>AV:</b>Marechal Castelo Branco, 1332-b, São Pedro</br>
+						<b>CEP:</b>65400-000, Codó-MA</br>
+						<b>CJPJ:</b>14.072.060/0001-47</br>
+						<b>FONE:</b>(99)98104-1696 ou (99)99903-5262
+					</span>
+				</div>
+			</div>
+			<!--<divisao-->
+			<div class="cont_info_valor">
+				<div class="divi1">
+					<p class="parcela">parcelas</p>
+					<p class="valor_parcela"><b>0/0</b></p>
+				</div>
+				<div class="divi1">
+					<p class="vencimento">data de vencimento</p>
+					<p class="valor_vencimento"><b>00/00/0000</b></p>
+				</div>
+				<div class="divi1" style="border:none;">
+					<p class="valor">valor</p>
+					<p class="valor_carne"><b>R$ 0,00</b></p>
+				</div>
+			</div>
+			<div class="cont_dados_pessoa">
+				<p class="nomep">Nome:</p>
+				<p class="cpfp">CPF:</p>
+			</div>
+			<p class="assinatura">assinatura</p>
+		</div>
+		<!--<divisao-->
+		<div class="via_empresa">
+			<div class="cont_info_empresa">
+				<div class="div_info">
+					<img src="logo.jpeg" class="logo">
+				</div>
+				<!--<divisao-->
+				<div class="div_info"  style="border:none;">
+					<span class="txt_info">
+						<span style="font-size:155%;"><b>COLÉGIO GALILEU LTDA-ME</b></span></br>
+						<b>AV:</b>Marechal Castelo Branco, 1332-b, São Pedro</br>
+						<b>CEP:</b>65400-000, Codó-MA</br>
+						<b>CJPJ:</b>14.072.060/0001-47</br>
+						<b>FONE:</b>(99)98104-1696 ou (99)99903-5262
+					</span>
+				</div>
+			</div>
+			<!--<divisao-->
+			<div class="cont_info_valor">
+				<div class="divi1">
+					<p class="parcela">parcelas</p>
+					<p class="valor_parcela"><strong>0/0</strong></p>
+				</div>
+				<div class="divi1">
+					<p class="vencimento">data de vencimento</p>
+					<p class="valor_vencimento"><b>00/00/0000</b></p>
+				</div>
+				<div class="divi1" style="border:none;">
+					<p class="valor">valor</p>
+					<p class="valor_carne"><b>R$ 0,00</b></p>
+				</div>
+			</div>
+			<div class="cont_dados_pessoa">
+				<p class="nomep">Nome:</p>
+				<p class="cpfp">CPF:</p>
+			</div>
+			<p class="assinatura" style="text-transform:uppercase;border:none;"><strong>data de pagamento: ________/__________/________</strong></p>
+		</div>
+	</div>
+	
+	<div class="cont_carne">
+		<div class="barra"></div>
+		<div class="via_client">
+			<div class="cont_info_empresa">
+				<div class="div_info">
+					<img src="logo.jpeg" class="logo">
+				</div>
+				<!--<divisao-->
+				<div class="div_info"  style="border:none;">
+					<span class="txt_info">
+						<span style="font-size:155%;"><b>COLÉGIO GALILEU LTDA-ME</b></span></br>
+						<b>AV:</b>Marechal Castelo Branco, 1332-b, São Pedro</br>
+						<b>CEP:</b>65400-000, Codó-MA</br>
+						<b>CJPJ:</b>14.072.060/0001-47</br>
+						<b>FONE:</b>(99)98104-1696 ou (99)99903-5262
+					</span>
+				</div>
+			</div>
+			<!--<divisao-->
+			<div class="cont_info_valor">
+				<div class="divi1">
+					<p class="parcela">parcelas</p>
+					<p class="valor_parcela"><b>0/0</b></p>
+				</div>
+				<div class="divi1">
+					<p class="vencimento">data de vencimento</p>
+					<p class="valor_vencimento"><b>00/00/0000</b></p>
+				</div>
+				<div class="divi1" style="border:none;">
+					<p class="valor">valor</p>
+					<p class="valor_carne"><b>R$ 0,00</b></p>
+				</div>
+			</div>
+			<div class="cont_dados_pessoa">
+				<p class="nomep">Nome:</p>
+				<p class="cpfp">CPF:</p>
+			</div>
+			<p class="assinatura">assinatura</p>
+		</div>
+		<!--<divisao-->
+		<div class="via_empresa">
+			<div class="cont_info_empresa">
+				<div class="div_info">
+					<img src="logo.jpeg" class="logo">
+				</div>
+				<!--<divisao-->
+				<div class="div_info"  style="border:none;">
+					<span class="txt_info">
+						<span style="font-size:155%;"><b>COLÉGIO GALILEU LTDA-ME</b></span></br>
+						<b>AV:</b>Marechal Castelo Branco, 1332-b, São Pedro</br>
+						<b>CEP:</b>65400-000, Codó-MA</br>
+						<b>CJPJ:</b>14.072.060/0001-47</br>
+						<b>FONE:</b>(99)98104-1696 ou (99)99903-5262
+					</span>
+				</div>
+			</div>
+			<!--<divisao-->
+			<div class="cont_info_valor">
+				<div class="divi1">
+					<p class="parcela">parcelas</p>
+					<p class="valor_parcela"><strong>0/0</strong></p>
+				</div>
+				<div class="divi1">
+					<p class="vencimento">data de vencimento</p>
+					<p class="valor_vencimento"><b>00/00/0000</b></p>
+				</div>
+				<div class="divi1" style="border:none;">
+					<p class="valor">valor</p>
+					<p class="valor_carne"><b>R$ 0,00</b></p>
+				</div>
+			</div>
+			<div class="cont_dados_pessoa">
+				<p class="nomep">Nome:</p>
+				<p class="cpfp">CPF:</p>
+			</div>
+			<p class="assinatura" style="text-transform:uppercase;border:none;"><strong>data de pagamento: ________/__________/________</strong></p>
+		</div>
+	</div>
+	</div>
+	
+	
+	<div id="fundo" style="margin-bottom:100px;"></div>
+	</body>
+	<script>
+		function imprimirPagina() {
+			window.print();
+		};
+		function voltar() {
+			window.location.replace("index.html");
+		};
+		
+		var conrcarne=document.getElementsByClassName("cont_carne");
+		var parcela=document.getElementsByClassName("valor_parcela");
+		var vencimento=document.getElementsByClassName("valor_vencimento");
+		var valorcarne=document.getElementsByClassName("valor_carne");
+		var nome=document.getElementsByClassName("nomep");
+		var cpf=document.getElementsByClassName("cpfp");
+		var textnamep=document.getElementById("textnamep");
+         
+		 
+		
+		var nparcelas=parseInt(localStorage.getItem('parcelascarne'));;
+		var dia=parseInt(localStorage.getItem('diacarne'));;
+		var mes=parseInt(localStorage.getItem('mescarne'));
+		var ano=parseInt(localStorage.getItem('anocarne'));;
+		var valor=parseInt(localStorage.getItem('valorcarne'));
+		var nomeclient=localStorage.getItem('nomecarne');;
+		var cpff=parseInt(localStorage.getItem('cpfcarne'));
+	    if(nparcelas==2){
+		}
+	//primeira parcela//
+		textnamep.innerHTML=nomeclient;
+		nome[0].innerHTML="Nome: "+nomeclient;
+		nome[1].innerHTML="Nome: "+nomeclient;
+		
+		cpf[0].innerHTML="CPF: "+cpff;
+		cpf[1].innerHTML="CPF: "+cpff;
+	
+		parcela[0].innerHTML=nparcelas-nparcelas+1+"/"+nparcelas;
+		parcela[1].innerHTML=nparcelas-nparcelas+1+"/"+nparcelas;
+		
+		if(mes>=12){mes=12
+			vencimento[0].innerHTML=dia+"/"+mes+"/"+ano;
+			vencimento[1].innerHTML=dia+"/"+mes+"/"+ano;
+		}else{
+			vencimento[0].innerHTML=dia+"/"+mes+"/"+ano;
+			vencimento[1].innerHTML=dia+"/"+mes+"/"+ano;
+		};
+		
+		valorcarne[0].innerHTML=valor.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+		valorcarne[1].innerHTML=valor.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+		
+	//segunda parcela//
+		nome[2].innerHTML="Nome: "+nomeclient;
+		nome[3].innerHTML="Nome: "+nomeclient;
+		
+		cpf[2].innerHTML="CPF: "+cpff;
+		cpf[3].innerHTML="CPF: "+cpff;
+	
+		parcela[2].innerHTML=nparcelas-nparcelas+2+"/"+nparcelas;
+		parcela[3].innerHTML=nparcelas-nparcelas+2+"/"+nparcelas;
+		
+		if(mes>=12){ano+=1; mes=1
+			vencimento[2].innerHTML=dia+"/"+mes+"/"+ano;
+			vencimento[3].innerHTML=dia+"/"+mes+"/"+ano;
+		}else{mes+=1;
+			vencimento[2].innerHTML=dia+"/"+mes+"/"+ano;
+			vencimento[3].innerHTML=dia+"/"+mes+"/"+ano;
+		};
+		
+		valorcarne[2].innerHTML=valor.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+		valorcarne[3].innerHTML=valor.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+		
+	//terceira parcela//
+		nome[4].innerHTML="Nome: "+nomeclient;
+		nome[5].innerHTML="Nome: "+nomeclient;
+		
+		cpf[4].innerHTML="CPF: "+cpff;
+		cpf[5].innerHTML="CPF: "+cpff;
+	
+		parcela[4].innerHTML=nparcelas-nparcelas+3+"/"+nparcelas;
+		parcela[5].innerHTML=nparcelas-nparcelas+3+"/"+nparcelas;
+		
+		if(mes>=12){ano+=1; mes=1
+			vencimento[4].innerHTML=dia+"/"+mes+"/"+ano;
+			vencimento[5].innerHTML=dia+"/"+mes+"/"+ano;
+		}else{mes+=1;
+			vencimento[4].innerHTML=dia+"/"+mes+"/"+ano;
+			vencimento[5].innerHTML=dia+"/"+mes+"/"+ano;
+		};
+		
+		valorcarne[4].innerHTML=valor.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+		valorcarne[5].innerHTML=valor.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+	
+	//quarta parcela//
+		nome[6].innerHTML="Nome: "+nomeclient;
+		nome[7].innerHTML="Nome: "+nomeclient;
+		
+		cpf[6].innerHTML="CPF: "+cpff;
+		cpf[7].innerHTML="CPF: "+cpff;
+	
+		parcela[6].innerHTML=nparcelas-nparcelas+4+"/"+nparcelas;
+		parcela[7].innerHTML=nparcelas-nparcelas+4+"/"+nparcelas;
+		
+		if(mes>=12){ano+=1; mes=1
+			vencimento[6].innerHTML=dia+"/"+mes+"/"+ano;
+			vencimento[7].innerHTML=dia+"/"+mes+"/"+ano;
+		}else{mes+=1;
+			vencimento[6].innerHTML=dia+"/"+mes+"/"+ano;
+			vencimento[7].innerHTML=dia+"/"+mes+"/"+ano;
+		};
+		
+		valorcarne[6].innerHTML=valor.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+		valorcarne[7].innerHTML=valor.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+		
+	//quinta parcela//
+		nome[8].innerHTML="Nome: "+nomeclient;
+		nome[9].innerHTML="Nome: "+nomeclient;
+		
+		cpf[8].innerHTML="CPF: "+cpff;
+		cpf[9].innerHTML="CPF: "+cpff;
+	
+		parcela[8].innerHTML=nparcelas-nparcelas+5+"/"+nparcelas;
+		parcela[9].innerHTML=nparcelas-nparcelas+5+"/"+nparcelas;
+		
+		if(mes>=12){ano+=1; mes=1
+			vencimento[8].innerHTML=dia+"/"+mes+"/"+ano;
+			vencimento[9].innerHTML=dia+"/"+mes+"/"+ano;
+		}else{mes+=1;
+			vencimento[8].innerHTML=dia+"/"+mes+"/"+ano;
+			vencimento[9].innerHTML=dia+"/"+mes+"/"+ano;
+		};
+		
+		valorcarne[8].innerHTML=valor.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+		valorcarne[9].innerHTML=valor.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+		
+		//sexta parcela//
+		nome[10].innerHTML="Nome: "+nomeclient;
+		nome[11].innerHTML="Nome: "+nomeclient;
+		
+		cpf[10].innerHTML="CPF: "+cpff;
+		cpf[11].innerHTML="CPF: "+cpff;
+	
+		parcela[10].innerHTML=nparcelas-nparcelas+6+"/"+nparcelas;
+		parcela[11].innerHTML=nparcelas-nparcelas+6+"/"+nparcelas;
+		
+		if(mes>=12){ano+=1; mes=1
+			vencimento[10].innerHTML=dia+"/"+mes+"/"+ano;
+			vencimento[11].innerHTML=dia+"/"+mes+"/"+ano;
+		}else{mes+=1;
+			vencimento[10].innerHTML=dia+"/"+mes+"/"+ano;
+			vencimento[11].innerHTML=dia+"/"+mes+"/"+ano;
+		};
+		
+		valorcarne[10].innerHTML=valor.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+		valorcarne[11].innerHTML=valor.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+		
+	//setima parcela//
+		nome[12].innerHTML="Nome: "+nomeclient;
+		nome[13].innerHTML="Nome: "+nomeclient;
+		
+		cpf[12].innerHTML="CPF: "+cpff;
+		cpf[13].innerHTML="CPF: "+cpff;
+	
+		parcela[12].innerHTML=nparcelas-nparcelas+7+"/"+nparcelas;
+		parcela[13].innerHTML=nparcelas-nparcelas+7+"/"+nparcelas;
+		
+		if(mes>=12){ano+=1; mes=1
+			vencimento[12].innerHTML=dia+"/"+mes+"/"+ano;
+			vencimento[13].innerHTML=dia+"/"+mes+"/"+ano;
+		}else{mes+=1;
+			vencimento[12].innerHTML=dia+"/"+mes+"/"+ano;
+			vencimento[13].innerHTML=dia+"/"+mes+"/"+ano;
+		};
+		
+		valorcarne[12].innerHTML=valor.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+		valorcarne[13].innerHTML=valor.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+		
+	//oitava parcela//
+		nome[14].innerHTML="Nome: "+nomeclient;
+		nome[15].innerHTML="Nome: "+nomeclient;
+		
+		cpf[14].innerHTML="CPF: "+cpff;
+		cpf[15].innerHTML="CPF: "+cpff;
+	
+		parcela[14].innerHTML=nparcelas-nparcelas+8+"/"+nparcelas;
+		parcela[15].innerHTML=nparcelas-nparcelas+8+"/"+nparcelas;
+		
+		if(mes>=12){ano+=1; mes=1
+			vencimento[14].innerHTML=dia+"/"+mes+"/"+ano;
+			vencimento[15].innerHTML=dia+"/"+mes+"/"+ano;
+		}else{mes+=1;
+			vencimento[14].innerHTML=dia+"/"+mes+"/"+ano;
+			vencimento[15].innerHTML=dia+"/"+mes+"/"+ano;
+		};
+		
+		valorcarne[14].innerHTML=valor.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+		valorcarne[15].innerHTML=valor.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+		
+	//nona parcela//
+		nome[16].innerHTML="Nome: "+nomeclient;
+		nome[17].innerHTML="Nome: "+nomeclient;
+		
+		cpf[16].innerHTML="CPF: "+cpff;
+		cpf[17].innerHTML="CPF: "+cpff;
+	
+		parcela[16].innerHTML=nparcelas-nparcelas+9+"/"+nparcelas;
+		parcela[17].innerHTML=nparcelas-nparcelas+9+"/"+nparcelas;
+		
+		if(mes>=12){ano+=1; mes=1
+			vencimento[16].innerHTML=dia+"/"+mes+"/"+ano;
+			vencimento[17].innerHTML=dia+"/"+mes+"/"+ano;
+		}else{mes+=1;
+			vencimento[16].innerHTML=dia+"/"+mes+"/"+ano;
+			vencimento[17].innerHTML=dia+"/"+mes+"/"+ano;
+		};
+		
+		valorcarne[16].innerHTML=valor.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+		valorcarne[17].innerHTML=valor.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+		
+	//decima parcela//
+		nome[18].innerHTML="Nome: "+nomeclient;
+		nome[19].innerHTML="Nome: "+nomeclient;
+		
+		cpf[18].innerHTML="CPF: "+cpff;
+		cpf[19].innerHTML="CPF: "+cpff;
+	
+		parcela[18].innerHTML=nparcelas-nparcelas+10+"/"+nparcelas;
+		parcela[19].innerHTML=nparcelas-nparcelas+10+"/"+nparcelas;
+		
+		if(mes>=12){ano+=1; mes=1
+			vencimento[18].innerHTML=dia+"/"+mes+"/"+ano;
+			vencimento[19].innerHTML=dia+"/"+mes+"/"+ano;
+		}else{mes+=1;
+			vencimento[18].innerHTML=dia+"/"+mes+"/"+ano;
+			vencimento[19].innerHTML=dia+"/"+mes+"/"+ano;
+		};
+		
+		valorcarne[18].innerHTML=valor.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+		valorcarne[19].innerHTML=valor.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+		
+	//decima1 parcela//
+		nome[20].innerHTML="Nome: "+nomeclient;
+		nome[21].innerHTML="Nome: "+nomeclient;
+		
+		cpf[20].innerHTML="CPF: "+cpff;
+		cpf[21].innerHTML="CPF: "+cpff;
+	
+		parcela[20].innerHTML=nparcelas-nparcelas+11+"/"+nparcelas;
+		parcela[21].innerHTML=nparcelas-nparcelas+11+"/"+nparcelas;
+		
+		if(mes>=12){ano+=1; mes=1
+			vencimento[20].innerHTML=dia+"/"+mes+"/"+ano;
+			vencimento[21].innerHTML=dia+"/"+mes+"/"+ano;
+		}else{mes+=1;
+			vencimento[20].innerHTML=dia+"/"+mes+"/"+ano;
+			vencimento[21].innerHTML=dia+"/"+mes+"/"+ano;
+		};
+		
+		valorcarne[20].innerHTML=valor.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+		valorcarne[21].innerHTML=valor.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+		
+	//decima2 parcela//
+		nome[22].innerHTML="Nome: "+nomeclient;
+		nome[23].innerHTML="Nome: "+nomeclient;
+		
+		cpf[22].innerHTML="CPF: "+cpff;
+		cpf[23].innerHTML="CPF: "+cpff;
+	
+		parcela[22].innerHTML=nparcelas-nparcelas+12+"/"+nparcelas;
+		parcela[23].innerHTML=nparcelas-nparcelas+12+"/"+nparcelas;
+		
+		if(mes>=12){ano+=1; mes=1
+			vencimento[22].innerHTML=dia+"/"+mes+"/"+ano;
+			vencimento[23].innerHTML=dia+"/"+mes+"/"+ano;
+		}else{mes+=1;
+			vencimento[22].innerHTML=dia+"/"+mes+"/"+ano;
+			vencimento[23].innerHTML=dia+"/"+mes+"/"+ano;
+		};
+		
+		valorcarne[22].innerHTML=valor.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+		valorcarne[23].innerHTML=valor.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+</script>
+
+</html>
