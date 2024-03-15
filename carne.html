@@ -16,8 +16,8 @@
 			position:sticky;
 			top:0px;
 		}
-		button{
-			position:relative;
+		.btn{
+			position:absolute;
 			width:20%;
 			height:7vh;
 			top:50%;
@@ -29,6 +29,21 @@
 			font-size:130%;
 			font-weight:bold;
 			color:#4682B4;
+		}
+		.btn2{
+			position:relative;
+			width:10%;
+			height:7vh;
+			top:50%;
+			left:5px;
+			transform:translate(0%,-50%);
+			border-radius:5px;
+			border:none;
+			text-transform:uppercase;
+			font-size:130%;
+			font-weight:bold;
+			background:#4682B4;
+			color:white;
 		}
 		button:hover{cursor:pointer;}
 		body{
@@ -65,7 +80,7 @@
 			transform:translate(-50%,0%);
 		}
 		#fundo{
-			background-image:url("https://cdn.wallpapersafari.com/64/48/6LRp9d.jpg");
+			background-image:url("https://img.freepik.com/premium-photo/blue-orange-wallpaper-with-blue-background-black-background_889227-20506.jpg");
 			background-attachment:fixed;
 			background-size:cover;
 			background-repeat:no-repeat;
@@ -387,15 +402,22 @@
 		}
 		}
 		#textname{
-			position:relative;
-			width:100%;
+			position:absolute;
+			width:auto;
+			height:auto;
 			text-align:center;
+			background:black;
 			color:white;
-			font-size:500%;
+			font-size:370%;
 			text-transform:uppercase;
 			font-weight:bold;
 			margin:0px;
-			top:20px;
+			padding-left:50px;
+			padding-right:50px;
+			border-radius:50px;
+			top:50%;
+			left:50%;
+			transform:translate(-50%,-50%);
 		}
 		#textnamep{
 			position:absolute;
@@ -419,7 +441,10 @@
 	</style>
 </head>
 <body>
-	<div id="cont_imprimir"><button onclick="imprimirPagina()">imprimir</button></div>
+	<div id="cont_imprimir">
+		<button class="btn2" onclick="voltar()">voltar</button>
+		<button class="btn" onclick="imprimirPagina()">imprimir</button>
+	</div>
     <!--Conteúdo da página vai aqui -->
 	<div id="fundo">
 		<p id="textname">galileu cursos</p>
@@ -1372,7 +1397,10 @@
 	<script>
 		function imprimirPagina() {
 			window.print();
-		}
+		};
+		function voltar() {
+			window.location.replace("indexs.html");
+		};
 		
 		var conrcarne=document.getElementsByClassName("cont_carne");
 		var parcela=document.getElementsByClassName("valor_parcela");
