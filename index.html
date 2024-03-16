@@ -3,12 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Formulário de Cadastro</title>
+<link rel="icon" href="icon.ico" type="image/x-icon">
+<title>carnê galileu</title>
 <style>
 body {
-    background-color: white;
+    background-color: black;
 	background-image:url("https://cdn.pixabay.com/photo/2020/12/15/13/45/dahlia-5833689_960_720.jpg");
-	background-size:70%;
+	background-size:cover;
 	background-position:center;
     display: flex;
     justify-content: center;
@@ -116,10 +117,18 @@ button:hover{cursor:pointer;}
 	border:none;
 	outline:none;
 }
+img{
+	position:absolute;
+	width:10%;
+	top:10px;
+	left:10px
+	
+	
+}
 </style>
 </head>
 <body>
-
+<img src="logo2.png"/>
 <div class="container">
    
         <input class="cnt1" type="text" name="nome" placeholder="Nome" required=""></br>
@@ -128,7 +137,7 @@ button:hover{cursor:pointer;}
 			<input class="data" type="number" placeholder="dd">
 			<input class="data" type="number" placeholder="mm">
 			<input class="data" type="number" placeholder="aaaa">
-			<input class="cnt3" type="number" name="parcelas" placeholder="Parcelas" max="12" min="0" required="" maxlength="2">
+			<input class="cnt3" type="number" name="parcelas" placeholder="Parcelas 1-12" max="12" min="0" required="" maxlength="2">
 		</div>
         <input class="cnt5" type="number" name="valor" placeholder="Valor" required="">
         <button class="btn" type="submit" onclick="ir()">GERAR</button>
@@ -143,21 +152,50 @@ button:hover{cursor:pointer;}
 	var valor=document.getElementsByClassName("cnt5");
 	var cpf=document.getElementsByClassName("cnt2");
 	var btn=document.getElementsByClassName("btn");
-	setInterval(function(){
-		nome[0].style="text-transform:uppercase;";
+	
+	nome[0].style="text-transform:uppercase;";
 		parcelas[0].style="text-transform:uppercase;";
 		data[0].style="text-transform:uppercase;";
 		data[1].style="text-transform:uppercase;";
 		data[2].style="text-transform:uppercase;";
 		valor[0].style="text-transform:uppercase;";
 		cpf[0].style="text-transform:uppercase;";
-		
-		if(cpf[0].value.length==3){cpf[0].value+="."};
-		if(cpf[0].value.length==7){cpf[0].value+="."};
-		if(cpf[0].value.length==11){cpf[0].value+="-"};
+	
+	setInterval(function(){
 		if(parcelas[0].value>12){parcelas[0].value=12};
+		if(data[0].value>31){data[0].value=31};
+		if(data[1].value>12){data[1].value=12};
 		
+		if(parcelas[0].value<1){parcelas[0].value=""};
+		if(data[0].value<1){data[0].value=""};
+		if(data[1].value<1){data[1].value=""};
+		if(data[2].value<1){data[2].value=""};
 	},0);
+	document.addEventListener('keydown', pegaTecla);
+	var tecla;
+	function pegaTecla(){
+		tecla = event.keyCode;
+		//alert(tecla);
+		if(tecla!=8){
+			if(cpf[0].value.length==3){cpf[0].value+="."};
+			if(cpf[0].value.length==7){cpf[0].value+="."};
+			if(cpf[0].value.length==11){cpf[0].value+="-"};
+			
+		};
+		if(tecla==13){
+			if(nome[0].value==""){nome[0].focus()}else
+			if(cpf[0].value==""){cpf[0].focus()}else
+			if(data[0].value==""){data[0].focus()}else
+			if(data[1].value==""){data[1].focus()}else
+			if(data[2].value==""){data[2].focus()}else
+			if(parcelas[0].value==""){parcelas[0].focus()}else
+			if(valor[0].value==""){valor[0].focus()};
+		};
+	};
+	
+	
+	
+	
 	function ir(){
 	if(nome[0].value!="" && parcelas[0].value<=12 && data[0].value!="" && data[1].value!="" && data[2].value!="" && valor[0].value!=""){
 	

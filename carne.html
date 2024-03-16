@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Título da Página</title>
+	<link rel="icon" href="icon.ico" type="image/x-icon">
+    <title>carnê galileu</title>
 	<style>
 		
 		#cont_imprimir{
@@ -67,7 +68,7 @@
     background: darkgray;
 }
 		.cont_carne{
-			display:flex;
+			display:none;
 			position:relative;
 			width:98%;
 			/*height:22vh;*/
@@ -140,7 +141,7 @@
 		.logo{
 			position:relative;
 			height:96%;
-			left:5px;
+			left:20px;
 			top:50%;
 			transform:translate(0%,-50%);
 		}
@@ -148,8 +149,8 @@
 			position:absolute;
 			width:300px;
 			font-family:arial;
-			font-size:7pt;
-			right:-30px;
+			font-size:2vh;
+			right:0px;
 			top:50%;
 			transform:translate(0%,-50%);
 		}
@@ -239,7 +240,7 @@
 			#cont_imprimir{display:none;}
 			body{background:none;}
 			.cont_carne{
-			display:flex;
+			
 			position:relative;
 			width:98%;
 			height:22vh;
@@ -306,7 +307,7 @@
 		.logo{
 			position:relative;
 			height:96%;
-			left:5px;
+			left:20px;
 			top:50%;
 			transform:translate(0%,-50%);
 		}
@@ -314,8 +315,8 @@
 			position:absolute;
 			width:300px;
 			font-family:arial;
-			font-size:7pt;
-			left:-15px;
+			font-size:0.9vh;
+			right:0px;
 			top:50%;
 			transform:translate(0%,-50%);
 		}
@@ -421,14 +422,13 @@
 		}
 		#textnamep{
 			position:absolute;
-			width:98%;
+			width:100%;
 			color:white;
 			font-size:200%;
 			text-align:center;
 			text-transform:uppercase;
 			font-weight:bold;
 			margin:0px;
-			padding-left:20px;
 			bottom:0px;
 			background:black;
 		}
@@ -1411,6 +1411,7 @@
 		var textnamep=document.getElementById("textnamep");
          
 		 
+		 
 		
 		var nparcelas=parseInt(localStorage.getItem('parcelascarne'));;
 		var dia=parseInt(localStorage.getItem('diacarne'));;
@@ -1419,8 +1420,11 @@
 		var valor=parseInt(localStorage.getItem('valorcarne'));
 		var nomeclient=localStorage.getItem('nomecarne');;
 		var cpff=parseInt(localStorage.getItem('cpfcarne'));
-	    if(nparcelas==2){
-		}
+	   
+	   for (let i = 0; i < nparcelas; i++) {
+		 conrcarne[i].style.display="flex";
+		};
+	   
 	//primeira parcela//
 		textnamep.innerHTML=nomeclient;
 		nome[0].innerHTML="Nome: "+nomeclient;
